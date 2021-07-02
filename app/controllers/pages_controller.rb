@@ -32,6 +32,7 @@ class PagesController < ApplicationController
     @ts = TransactionLog.new
     @ts.transaction_id = params[:id]
     @ts.amount_change = @purchased_stock
+    @ts.logged_price = @transaction.broker_stock.stock.price
     @ts.save
     redirect_to pages_portfolio_path, notice: 'Stock Successfully Purchased'
   end
@@ -53,6 +54,7 @@ class PagesController < ApplicationController
     @ts.transaction_id = params[:id]
     @ts.amount_change = @sold_stock
     @ts.save
+    @ts.logged_price = @transaction.broker_stock.stock.price
     redirect_to pages_portfolio_path, notice: 'Stock Successfully Purchased'
   end
 
