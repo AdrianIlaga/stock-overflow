@@ -1,3 +1,14 @@
 // Place all the styles related to the admin controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
+
+.btn-info {
+  background-color: #005792;
+  border: 3px solid #005792;
+
+  &:hover {
+    background-color: #fd5f00;
+    border: 3px solid #fd5f00;
+    color: #f6f6e9;
+  }
+}
