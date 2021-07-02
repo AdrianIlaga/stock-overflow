@@ -1,16 +1,60 @@
-<%= link_to "Go Back", users_index_path %>
+<section class="admin-show">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-8 offset-md-2 col-lg-6 offset-lg-3">
+        <div class="card">
+          <div class="card-body">
 
-<h3>First Name: <%= @user.first_name %></h3>
-<h3>Last Name: <%= @user.last_name %></h3>
-<h3>Email: <%= @user.email %></h3>
-<h3>Account Type: <%= @user.user_type.user_type %></h3>
-<% if @user.user_type.user_type == 'broker' %>
-  <h3>Account Status: 
-    <% case @user.verified %>
-    <% when true %> 
-    Account Verified
-    <% when false %> 
-    Pending Approval
-    <% end %>
-  </h3>
-<% end %>
+
+            <table class="table table-borderless">
+              <tr>
+                <td class="text-right">First Name:</td>
+                <td><%= @user.first_name %></td>
+              </tr>
+              <tr>
+                <td class="text-right">Last Name:</td>
+                <td><%= @user.last_name %></td>
+              </tr>
+              <tr>
+                <td class="text-right">Email:</td>
+                <td><%= @user.email %></td>
+              </tr>
+              <tr>
+                <td class="text-right">Account Type:</td>
+                <td><%= @user.user_type.user_type %></td>
+              </tr>
+              <% if @user.user_type.user_type == 'broker' %>
+                <tr>
+                  <td class="text-right">Account Status:</td>
+                  <td>
+                    <% case @user.verified %>
+                    <% when true %> 
+                      Account Verified
+                    <% when false %> 
+                      Pending Approval
+                    <% end %>
+                  </td>
+                </tr>
+              <% end %>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="text-center">
+      <%= link_to "Go Back", users_index_path, class: "btn btn-info btn-sm mt-5" %>
+    </div>
+    
+  </div>
+</section>
+
+
+
+
+
+
+
+
+
+
