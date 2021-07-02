@@ -1,0 +1,12 @@
+<section class="not-verified"></section>
+
+<div class="user-not-verified">
+  <div class="message-box">
+  
+    <h4 class="text-center mb-4">
+      You cannot access the site because your account is not yet verified.
+    </h4>
+
+    <%= link_to "OK", destroy_user_session_path, method: :delete, class: "btn btn-primary" %>
+  </div>
+</div>
