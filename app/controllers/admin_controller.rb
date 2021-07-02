@@ -18,7 +18,10 @@ class AdminController < ApplicationController
 
   def approve_pending
     @user = User.find(params[:id])
-    redirect_to users_pending_path if @user.update(user_params)
+    return unless @user.update(user_params)
+
+    UserMailer.approval_email(@user).deliver_now
+    redirect_to users_pending_path
   end
 
   def show
