@@ -12,3 +12,17 @@
     color: #f6f6e9;
   }
 }
+
+.admin-page {
+  position: relative;
+
+  .admin-part {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: calc(100vh - 112px);
+
+    padding: 0 5%;
+  }
+}
