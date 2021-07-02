@@ -1,11 +1,13 @@
 <% if current_user %>
   <% if current_user.verified == false %>
     <%#= render "partials/not-verified" %>
-    <section>
-      <div class="container d-flex justify-content-center align-items-center"">
-        <h2>
-          Thank you for signing up. Please wait until your account is verified. Have a great day.
-        </h2>
+    <section class="not-verified-home">
+      <div class="not-verified-container">
+        <div class="content">
+          <h2 class="text-center">
+            Thank you for signing up. <br> Please wait until your account is verified. <br><br> Have a great day.
+          </h2>
+        </div>
       </div>
     </section>
   <% else %>
