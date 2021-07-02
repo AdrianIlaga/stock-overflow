@@ -1,7 +1,13 @@
-<%# Welcomes Users and shows them any notifications %>
-
 <% if current_user %>
-  <%= render "partials/welcome-page" %>
+  <% if current_user.verified == false %>
+    <%= render "partials/not-verified" %>
+  <% else %>
+    <% if @user_type == "admin" %>
+      <%= render "partials/welcome-admin-page" %>
+    <% else %>
+      <%= render "partials/welcome-page" %>
+    <% end %>
+  <% end %>
 <% else %>
   <%= render "partials/landing-page" %>
 <% end %>
