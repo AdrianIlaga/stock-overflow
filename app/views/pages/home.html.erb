@@ -1,6 +1,13 @@
 <% if current_user %>
   <% if current_user.verified == false %>
-    <%= render "partials/not-verified" %>
+    <%#= render "partials/not-verified" %>
+    <section>
+      <div class="container d-flex justify-content-center align-items-center"">
+        <h2>
+          Thank you for signing up. Please wait until your account is verified. Have a great day.
+        </h2>
+      </div>
+    </section>
   <% else %>
     <% if @user_type == "admin" %>
       <%= render "partials/welcome-admin-page" %>
