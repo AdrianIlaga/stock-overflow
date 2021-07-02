@@ -1,29 +1,31 @@
-<%= link_to "Add User", user_new_path %> 
+<div class="container mt-5">
+  <%= link_to "Add User", user_new_path, class: "btn btn-info" %>
+</div>
 
 <section>
   <div class="container">
-    <h1>All</h1>
+    <h2>All</h2>
     <%= render "users", users: @users %>
   </div>
 </section>
 
 <section>
   <div class="container">
-    <h1>Admins</h1>
+    <h2>Admins</h2>
     <%= render "users", users: @admins %>
   </div>
 </section>
 
 <section>
   <div class="container">
-    <h1>Brokers</h1>
+    <h2>Brokers</h2>
     <%= render "users", users: @brokers %>
   </div>
 </section>
 
 <section>
     <div class="container">
-      <h1>Buyers</h1>
+      <h2>Buyers</h2>
       <%= render "users", users: @buyers %>
     </div>
   </section>
