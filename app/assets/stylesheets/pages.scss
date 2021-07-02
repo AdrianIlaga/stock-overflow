@@ -116,7 +116,8 @@ section#learn-more {
 }
 
 // Welcome Page Partial
-.welcome {
+.welcome,
+.welcome-admin {
   min-height: calc(100vh - 112px);
 
   .options-container {
