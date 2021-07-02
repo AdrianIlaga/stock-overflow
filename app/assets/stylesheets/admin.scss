@@ -2,17 +2,6 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
 
-// .btn-info {
-//   background-color: #005792;
-//   border: 3px solid #005792;
-
-//   &:hover {
-//     background-color: #fd5f00;
-//     border: 3px solid #fd5f00;
-//     color: #f6f6e9;
-//   }
-// }
-
 .admin-page {
   position: relative;
 
@@ -24,5 +13,19 @@
     height: calc(100vh - 112px);
 
     padding: 0 5%;
+  }
+}
+
+.admin-show {
+  .btn-info {
+    background-color: #005792;
+    border: 3px solid #005792;
+    transition: 0.2s ease-in;
+
+    &:hover {
+      background-color: #fd5f00;
+      border: 3px solid #fd5f00;
+      color: #f6f6e9;
+    }
   }
 }
