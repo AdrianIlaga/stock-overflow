@@ -24,6 +24,7 @@ class User < ApplicationRecord
   scope :admins, -> { where(user_type_id: UserType.find_by(user_type: 'admin').id) }
   # Callbacks
   before_validation :set_user_verification
+  after_create :welcome_email
   # Private Methods
 
   private
@@ -34,5 +35,9 @@ class User < ApplicationRecord
     user_type = self.user_type.user_type
     self.verified = false if user_type == 'broker'
     self.verified = true if %w[buyer admin].include?(user_type)
+  end
+
+  def welcome_email
+    UserMailer.welcome_email(self).deliver_now
   end
 end
