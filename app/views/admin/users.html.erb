@@ -1,29 +1,70 @@
 <section class="admin-page">
-  <div class="admin-part" id="users-all">
-    <div class="container">
+  <div class="container">
+    <div class="buttons text-center mb-4">
+      <div class="btn btn-primary options mb-2">
+        All
+      </div>
+
+      <div class="btn btn-primary options mb-2">
+        Admins
+      </div>
+
+      <div class="btn btn-primary options mb-2">
+        Brokers
+      </div>
+
+      <div class="btn btn-primary options mb-2">
+        Buyers
+      </div>
+    </div>
+
+    <div class="admin-part" id="users-all">
       <h2 class="text-center">All</h2>
       <%= render "users", users: @users %>
     </div>
-  </div>
 
-  <div class="admin-part" id="users-admins">
-    <div class="container">
+    <div class="admin-part" id="users-admins">
       <h2 class="text-center">Admins</h2>
       <%= render "users", users: @admins %>
     </div>
-  </div>
 
-  <div class="admin-part" id="users-brokers">
-    <div class="container">
+    <div class="admin-part" id="users-brokers">
       <h2 class="text-center">Brokers</h2>
       <%= render "users", users: @brokers %>
     </div>
-  </div>
 
-  <div class="admin-part" id="users-buyers">
-    <div class="container">
+    <div class="admin-part" id="users-buyers">
       <h2 class="text-center">Buyers</h2>
       <%= render "users", users: @buyers %>
     </div>
   </div>
 </section>
+
+<script>
+  const adminPart = document.querySelectorAll('.admin-part');
+  const btnOptions = document.querySelectorAll('.options');
+
+  const hideAll = () => {
+    for (let i = 0; i < adminPart.length; i++) {
+      adminPart[i].style.display = "none";
+    }
+  }
+
+  for (let i = 0; i < btnOptions.length; i++) {
+    btnOptions[i].addEventListener("click", () => {
+      hideAll();
+      adminPart[i].style.display = "block";
+    })
+  }
+
+  const init = () => {
+    hideAll();
+    adminPart[0].style.display = "block";
+  }
+
+  window.onload = (event) => {  
+    init();  
+  };
+
+  init();
+</script>
