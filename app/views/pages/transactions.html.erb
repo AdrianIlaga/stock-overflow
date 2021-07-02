@@ -9,7 +9,9 @@
             <th scope="col">Buyer</th>
             <th scope="col">Seller</th>
             <th scope="col">Stock</th>
+            <th scope="col" class="text-center">Type</th>
             <th scope="col" class="text-center">Amount</th>
+            <th scope="col" class="text-center">Total(USD)</th>
           </tr>
         </thead>
         <tbody>
@@ -18,7 +20,17 @@
               <td><%= transaction_log.buyer_transaction.user.email %></td>
               <td><%= transaction_log.buyer_transaction.broker_stock.user.email %></td>
               <td><%= transaction_log.buyer_transaction.broker_stock.stock.stock %></td>
-              <td class="text-center"><%= transaction_log.amount_change %></td>
+              <td class="text-center">
+              <% if transaction_log.amount_change > 0 %>
+                Buy
+              <% else %>
+                Sell
+              <% end %>
+              </td>
+              <td class="text-center"><%= transaction_log.amount_change.abs %></td>
+              <td class="text-center">
+              <%= number_with_precision(transaction_log.amount_change.abs * transaction_log.logged_price, :precision => 2, :delimiter => ',') %>
+              </td>
           <% end %>
         </tbody>
       </table>
