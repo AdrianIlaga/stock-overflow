@@ -8,13 +8,13 @@ class Stock < ApplicationRecord
 
   # Fetch top 10 stocks from IEX API
   def self.most_active_stocks
-    uri = URI("https://sandbox.iexapis.com/v1/stock/AAPL/quote?token=#{ENV['IEX_SECRET_TOKEN']}")
+    uri = URI("https://sandbox.iexapis.com/v1/stock/AAPL/quote?token=#{Rails.application.credentials.iex[:publishable_token]}")
     response = Net::HTTP.get_response(uri)
     return nil unless response.message == 'OK'
 
     IEX::Api::Client.new(
-      publishable_token: ENV['IEX_PUBLISHABLE_TOKEN'],
-      secret_token: ENV['IEX_SECRET_TOKEN'],
+      publishable_token: Rails.application.credentials.iex[:publishable_token],
+      secret_token: Rails.application.credentials.iex[:secret_token],
       endpoint: 'https://sandbox.iexapis.com/v1'
     ).stock_market_list(:mostactive)
   end
