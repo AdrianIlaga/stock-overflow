@@ -1,4 +1,3 @@
-// window.onload = (event) => {
 console.log("Admin Reload...");
 
 const adminPart = document.querySelectorAll(".admin-part");
@@ -23,5 +22,3 @@ const init = () => {
 };
 
 init();
-
-// };
