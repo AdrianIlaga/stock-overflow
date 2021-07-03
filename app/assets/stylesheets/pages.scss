@@ -28,8 +28,8 @@ section.hero {
   }
 
   .lead {
-    font-size: 24px;
-    max-width: 75%;
+    font-size: 32px;
+    max-width: 70%;
   }
 
   .hero-cta {
@@ -115,8 +115,9 @@ section#learn-more {
   padding: 0;
 }
 
-// Welcome Page
-.welcome {
+// Welcome Page Partial
+.welcome,
+.welcome-admin {
   min-height: calc(100vh - 112px);
 
   .options-container {
@@ -150,6 +151,59 @@ section#learn-more {
           }
         }
       }
+    }
+  }
+}
+
+// Not Verified Partial
+.not-verified {
+  min-height: calc(100vh - 200px);
+}
+
+.user-not-verified {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.75);
+  z-index: 1050;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  .message-box {
+    background-color: #f6f6e9;
+    max-width: 500px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 3rem;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    border-radius: 10px;
+  }
+}
+
+.not-verified-home {
+  position: relative;
+
+  .not-verified-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    .content {
+      max-width: 768px;
     }
   }
 }

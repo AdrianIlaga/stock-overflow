@@ -1,29 +1,43 @@
-<%= link_to "Add User", user_new_path %> 
-
-<section>
+<section class="admin-page">
   <div class="container">
-    <h1>All</h1>
-    <%= render "users", users: @users %>
-  </div>
-</section>
+    <div class="buttons text-center mb-4">
+      <div class="btn btn-primary options mb-2">
+        All
+      </div>
 
-<section>
-  <div class="container">
-    <h1>Admins</h1>
-    <%= render "users", users: @admins %>
-  </div>
-</section>
+      <div class="btn btn-primary options mb-2">
+        Admins
+      </div>
 
-<section>
-  <div class="container">
-    <h1>Brokers</h1>
-    <%= render "users", users: @brokers %>
-  </div>
-</section>
+      <div class="btn btn-primary options mb-2">
+        Brokers
+      </div>
 
-<section>
-    <div class="container">
-      <h1>Buyers</h1>
+      <div class="btn btn-primary options mb-2">
+        Buyers
+      </div>
+    </div>
+
+    <div class="admin-part" id="users-all">
+      <h2 class="text-center">All</h2>
+      <%= render "users", users: @users %>
+    </div>
+
+    <div class="admin-part" id="users-admins">
+      <h2 class="text-center">Admins</h2>
+      <%= render "users", users: @admins %>
+    </div>
+
+    <div class="admin-part" id="users-brokers">
+      <h2 class="text-center">Brokers</h2>
+      <%= render "users", users: @brokers %>
+    </div>
+
+    <div class="admin-part" id="users-buyers">
+      <h2 class="text-center">Buyers</h2>
       <%= render "users", users: @buyers %>
     </div>
-  </section>
+  </div>
+</section>
+
+<%= javascript_pack_tag 'admin-reload', 'data-turbolinks-track': 'reload' %>

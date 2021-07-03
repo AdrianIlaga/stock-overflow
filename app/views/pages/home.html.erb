@@ -1,7 +1,22 @@
-<%# Welcomes Users and shows them any notifications %>
-
 <% if current_user %>
-  <%= render "partials/welcome-page" %>
+  <% if current_user.verified == false %>
+    <%#= render "partials/not-verified" %>
+    <section class="not-verified-home">
+      <div class="not-verified-container">
+        <div class="content">
+          <h2 class="text-center">
+            Thank you for signing up. <br> Please wait until your account is verified. <br><br> Have a great day.
+          </h2>
+        </div>
+      </div>
+    </section>
+  <% else %>
+    <% if @user_type == "admin" %>
+      <%= render "partials/welcome-admin-page" %>
+    <% else %>
+      <%= render "partials/welcome-page" %>
+    <% end %>
+  <% end %>
 <% else %>
   <%= render "partials/landing-page" %>
 <% end %>

@@ -3,7 +3,7 @@
     <h2 class="mb-3 text-center">Portfolio</h2>
 
     <div class="table-container">
-      <table class="table table-hover table-responsive-sm">
+      <table class="table table-hover table-responsive-md">
         <thead class="thead-bg-color sticky-top">
           <tr>
             <th scope="col">Ticker</th>
@@ -31,7 +31,7 @@
               <td class="text-center"><%= buyer_stock.user.email %></td>
               <td class="text-center"><%= transaction.amount %></td>
               <td class="text-center">
-              <%= link_to "Buy", buy_path(transaction), class: "btn btn-info btn-sm mb-1 mb-xl-0" %>
+              <%= link_to "Buy", buy_path(transaction), class: "btn btn-info btn-sm mb-1 mb-lg-0" %>
               <%= link_to "Sell", sell_path(transaction), class: "btn btn-danger btn-sm" %>
               </td>
             </tr>

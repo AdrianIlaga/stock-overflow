@@ -105,6 +105,17 @@ a:hover {
   color: #f6f6e9;
 }
 
+/* .btn-danger {
+  background-color: #005792;
+  border: 3px solid #005792;
+  transition: 0.2s ease-in;
+}
+
+.btn-danger:hover {
+  background-color: #dc3545;
+  border: 3px solid #dc3545;
+} */
+
 .form-devise,
 .form-buy,
 .form-sell {
