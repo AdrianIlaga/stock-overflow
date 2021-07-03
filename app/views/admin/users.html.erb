@@ -40,31 +40,4 @@
   </div>
 </section>
 
-<script>
-  const adminPart = document.querySelectorAll('.admin-part');
-  const btnOptions = document.querySelectorAll('.options');
-
-  const hideAll = () => {
-    for (let i = 0; i < adminPart.length; i++) {
-      adminPart[i].style.display = "none";
-    }
-  }
-
-  for (let i = 0; i < btnOptions.length; i++) {
-    btnOptions[i].addEventListener("click", () => {
-      hideAll();
-      adminPart[i].style.display = "block";
-    })
-  }
-
-  const init = () => {
-    hideAll();
-    adminPart[0].style.display = "block";
-  }
-
-  window.onload = (event) => {  
-    init();  
-  };
-
-  init();
-</script>
+<%= javascript_pack_tag 'admin-reload', 'data-turbolinks-track': 'reload' %>
