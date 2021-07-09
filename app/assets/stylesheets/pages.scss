@@ -112,6 +112,8 @@ section.hero {
 }
 
 section.learn-more {
+  min-height: 30vh;
+
   @media screen and (min-width: 768px) {
     .heading {
       font-size: 2.5rem;
@@ -130,6 +132,36 @@ section.learn-more {
     .lead {
       font-size: 2.5rem;
       line-height: 1.1;
+    }
+  }
+}
+
+section.benefits {
+  min-height: 30vh;
+  background-color: #005792;
+  // color: #f6f6e9;
+  h2 {
+    color: #f6f6e9;
+  }
+
+  .card {
+    img {
+      width: 50%;
+      height: 50%;
+
+      margin: 0 auto;
+    }
+  }
+
+  @media screen and (min-width: 768px) {
+    h2 {
+      font-size: 2.5rem;
+    }
+  }
+
+  @media screen and (min-width: 992px) {
+    h2 {
+      font-size: 4rem;
     }
   }
 }

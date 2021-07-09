@@ -33,11 +33,11 @@
   </div>
 </section>
 
-<section id="learn-more" class="learn-more p-0">
-  <%= render "partials/navbar" %>
+<%= render "partials/navbar" %>
 
+<section id="learn-more" class="learn-more p-0">
   <div class="container">
-    <div class="row row-cols-1 row-cols-md-2 py-4 py-md-5 mt-5 broker">
+    <div class="row row-cols-1 row-cols-md-2 py-4 py-md-5 mt-4 mt-lg-5 broker">
       <div class="col-md-7 order-1 order-md-0">
         <img src="<%= asset_path('broker.jpg') %>" alt="broker" class="img-fluid">
       </div>
@@ -48,7 +48,7 @@
       </div>
     </div>
 
-    <div class="row row-cols-1 row-cols-md-2 py-4 py-md-5 mb-5 buyer">
+    <div class="row row-cols-1 row-cols-md-2 py-4 py-md-5 mb-4 mb-lg-5 buyer">
       <div class="col-md-5 d-flex flex-column align-items-center justify-content-center px-lg-5">
         <h2 class="heading text-center mb-lg-4">Buyer</h2>
         <p class="lead text-center">Buy stocks from registered brokers and sell them in a later date.</p>
@@ -56,6 +56,47 @@
 
       <div class="col-md-7">
         <img src="<%= asset_path('buyer.jpg') %>" alt="buyer" class="img-fluid">
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="benefits">
+  <div class="container">
+    <h2 class="text-center py-4">Stock Overflow Benefits</h2>
+  </div>
+
+  <div class="container my-4 my-lg-5">
+    <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3">
+      <div class="col mb-5 mb-lg-0">
+        <div class="card h-100">
+          <img src="<%= asset_path('clock.svg') %>" alt="clock" class="card-img-top pt-5 pb-4">
+
+          <div class="card-body text-center">
+            <h3 class="card-title">Timely Investment</h3>
+            <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur veniam dolore minima voluptate dolorem amet velit et atque. Magni ratione. Lorem ipsum dolor sit amet.</p>
+          </div>
+        </div>
+      </div>
+      <div class="col mb-5 mb-lg-0">
+        <div class="card h-100">
+          <img src="<%= asset_path('growth.svg') %>" alt="growth" class="card-img-top pt-5 pb-4">
+
+          <div class="card-body text-center">
+            <h3 class="card-title">Investment Gain</h3>
+            <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur veniam dolore minima voluptate dolorem amet velit et atque. Magni ratione.</p>
+          </div>
+        </div>
+      </div>
+      <div class="col mb-5 mb-lg-0">
+        <div class="card h-100">
+          <img src="<%= asset_path('computer.svg') %>" alt="computer" class="card-img-top pt-5 pb-4">
+
+          <div class="card-body text-center">
+            <h3 class="card-title">Ease of Use</h3>
+            <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur veniam dolore minima voluptate dolorem amet velit et atque. Magni ratione.</p>
+          </div>
+        </div>
       </div>
     </div>
   </div>
